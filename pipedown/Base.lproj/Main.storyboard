@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,12 +16,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="pipedown" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fc4-Ve-235">
-                                <rect key="frame" x="154" y="390" width="67" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fc4-Ve-235" userLabel="Start/Stop">
+                                <rect key="frame" x="154" y="318.5" width="67" height="30"/>
                                 <state key="normal" title="Start Test">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -28,17 +28,31 @@
                                     <action selector="buttonClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="y1e-YL-AOU"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Xsi-8q-3lm" userLabel="Volume">
+                                <rect key="frame" x="14" y="372.5" width="347" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="99w-us-gO0"/>
+                                </constraints>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Xsi-8q-3lm" firstAttribute="top" secondItem="fc4-Ve-235" secondAttribute="bottom" constant="24" id="Bvn-aj-CGF"/>
+                            <constraint firstItem="Xsi-8q-3lm" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Icn-7u-IbF"/>
+                            <constraint firstItem="fc4-Ve-235" firstAttribute="centerX" secondItem="Xsi-8q-3lm" secondAttribute="centerX" id="XhC-QN-c4o"/>
+                            <constraint firstItem="Xsi-8q-3lm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="n8r-9E-gKq"/>
+                            <constraint firstItem="fc4-Ve-235" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xpO-k2-zdx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="theButton" destination="fc4-Ve-235" id="VDa-We-1mq"/>
+                        <outlet property="startStopButton" destination="fc4-Ve-235" id="gBy-A5-eM1"/>
+                        <outlet property="volumeSlider" destination="Xsi-8q-3lm" id="Kdz-HP-igw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="133.5832083958021"/>
+            <point key="canvasLocation" x="132" y="133.00492610837438"/>
         </scene>
     </scenes>
 </document>

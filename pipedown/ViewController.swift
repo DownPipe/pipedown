@@ -9,7 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet var theButton: UIButton?
+    @IBOutlet var startStopButton: UIButton?
+    @IBOutlet var volumeSlider : UISlider?
     var started = false;
     
     override func viewDidLoad() {
@@ -28,12 +29,16 @@ class ViewController: UIViewController {
         started = !started
         
         if started {
-            theButton?.setTitleColor(UIColor.green, for: .normal)
-            theButton?.setTitle("Stop Test", for: .normal)
+            startStopButton?.setTitleColor(UIColor.green, for: .normal)
+            startStopButton?.setTitle("Stop Test", for: .normal)
+//            volumeSlider?.isUserInteractionEnabled = true
+            volumeSlider?.isEnabled = true
         }
         else {
-            theButton?.setTitleColor(UIColor.red, for: .normal)
-            theButton?.setTitle("Start Test", for: .normal)
+            startStopButton?.setTitleColor(UIColor.red, for: .normal)
+            startStopButton?.setTitle("Start Test", for: .normal)
+//            volumeSlider?.isUserInteractionEnabled = false
+            volumeSlider?.isEnabled = false
         }
     }
 }
